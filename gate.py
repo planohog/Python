@@ -2,7 +2,7 @@ import datetime
 import pifacedigitalio
 from flask import Flask, render_template
 gatered = 0
-backcolor = red
+backcolor = white
 app = Flask(__name__)
 @app.route("/")
 def hello():
@@ -13,10 +13,10 @@ def hello():
    timeString = now.strftime("%Y-%m-%d %H:%M")
    bgcolor ="white"
    if gateclosed == '1':
-       bgcolor = 'green'
+       backcolor = 'green'
 
    if gateclosed == '0':
-       bgcolor = 'red'
+       backcolor = 'red'
 
    templateData = {
       'title' : 'GATE',
