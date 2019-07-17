@@ -2,7 +2,7 @@ import datetime
 import pifacedigitalio
 from flask import Flask, render_template
 gatered = 0
-#bgcolor = ""
+backcolor = red
 app = Flask(__name__)
 @app.route("/")
 def hello():
@@ -22,7 +22,7 @@ def hello():
       'title' : 'GATE',
       'time': timeString,
       'gate': gateclosed,
-      'bcolor' : bgcolor
+      'bgcolor' : backcolor
       }
    return render_template('test3.html', **templateData)
 
@@ -35,15 +35,15 @@ def action(deviceName, action):
     gateclosed = pfd.input_pins[0].value
 
     if gateclosed == '1':
-       bgcolor = 'green'  
+       backcolor = 'green'  
 
     if gateclosed == '0':
-       bgcolor = 'red'  
+       backcolor = 'red'  
 
     if deviceName == 'gatechange':
           actuator = 1
 
-    if action == "toggle":
+    if action == "toggle" and actuator == 1:
      pfd.relays[0].value = 1 #
      from time import sleep
      sleep(1.1) # Time in seconds
@@ -53,7 +53,7 @@ def action(deviceName, action):
     templateData = {
               'time'    : timeString,
               'gate'    : gateclosed,
-              'bcolor'  : bgcolor
+              'bgcolor' : backcolor
         }
     return render_template('test3.html', **templateData)
 
