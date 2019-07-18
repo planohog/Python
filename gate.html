@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+   <head>
+      <title>{{ title }}</title>
+      <style>
+         body { background-color: {{ bgcolor }} ; }
+      </style>
+   <meta http-equiv="refresh" content="30">
+   </head>
+   <body>
+      <h1>{{ title }}</h1>
+      <h2>The date and time {{ time }}</h2>
+      <h2>GateStatus: {{ gate }}</h2>
+      GATE BUTTON ==>
+      <a href="/gatechange/toggle" class="button">Press Here</a> <BR><BR> 
+      REFRESH <a href="/gatechange/refresh" class="button">Refresh Screen</a>  
+   </body>
+</html>
