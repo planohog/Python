@@ -10,7 +10,7 @@ os.environ["AMBIENT_APPLICATION_KEY"] = '363b808026833a7f8a1913dc12b9cb774d0b834
 
 from ambient_api.ambientapi import AmbientAPI
 
-callsign = 'KG5TJT'
+callsign = 'K'
 latitude = XX.6911
 longitude = XX.25722
 devicename = 'WS2902' #This identifies your equipment/software. You can put anything you want. I use 'WS2902A', which is the model of weather station I have
